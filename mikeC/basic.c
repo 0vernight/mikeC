@@ -16,8 +16,9 @@ struct StructPerson
 	char c;
 };
 
+int lengthOfLongestSubstring(char* s);
 void statisticChar(char str[]);
-void reverseArr(int arr[]);
+void reverseArr(int arr[],int n);
 void timeMaker(int n);
 void guessNum(int n);
 
@@ -27,21 +28,23 @@ int main(void) {
 	char s[] = "hello world";
 	int arr[] = { 1,2,3,4,5,6 };
 	char st[10] = { 'a','b','c' };
-	char str[100] = { 0 };
+	char str[100] = "abcabcaa";
 
 	n = 20;
 	m = 30;
 
 
 
-	printf("%d=%d\n", sizeof(s), strlen(s));
+	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	printf("%d:%u:%d:%s\n", n + 10 == m, sizeof(arr), n, st);
 
-
+	n = sizeof(arr) / sizeof(arr[0]);
 	//以下为函数调用
 
+	
+	printf("ret=%d\n",lengthOfLongestSubstring(s));
 	//statisticChar(str);
-	//reverseArr(*arr);
+	//reverseArr(&arr,n);
 	//timeMaker(n);
 	//guessNum(n);
 
@@ -72,6 +75,9 @@ int main(void) {
 
 //函数实现
 
+int lengthOfLongestSubstring(char* s) {
+
+}
 void statisticChar(char str[]) {		//没有写成函数之前是对的
 	int count[26] = { 0 };
 	printf("%s", str);
@@ -89,11 +95,16 @@ void statisticChar(char str[]) {		//没有写成函数之前是对的
 	printf("\n");
 }
 
-void reverseArr(int arr[]) {
-	int n, m;
-
-	n = sizeof(arr) / sizeof(arr[0]);		//获取数组的长度
-
+void reverseArr(int arr[],int n) {
+	int  m;
+	
+	
+	//n = (sizeof(arr) / sizeof(arr[0]));		//获取数组的长度//这里sizeof取到的大小不是数组的大小而是指针的大小32位为4，64位为8.
+	for (int i = 0; i < n; i++)
+	{
+		printf("arr[%d]=%d\n", i, arr[i]);
+	}
+	printf("n=%d\n", n);
 	for (int i = 0; i < n / 2; i++)
 	{
 		m = arr[i];
