@@ -16,6 +16,7 @@ struct StructPerson
 	char c;
 };
 
+int strTimes(char *str,char *substr);
 int lengthOfLongestSubstring(char* s);
 void statisticChar(char str[]);
 void reverseArr(int arr[],int n);
@@ -27,8 +28,8 @@ int main(void) {
 	int n, m;
 	char s[] = "hello world";
 	int arr[] = { 1,2,3,4,5,6 };
-	char st[10] = { 'a','b','c' };
-	char str[100] = "abcabcaa";
+	char str[] = "helloallobllocllo"; 
+	char st[] = "llo";
 
 	n = 20;
 	m = 30;
@@ -36,13 +37,14 @@ int main(void) {
 
 
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
-	printf("%d:%u:%d:%s\n", n + 10 == m, sizeof(arr), n, st);
+	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 
 	n = sizeof(arr) / sizeof(arr[0]);
 	//以下为函数调用
 
 	
-	printf("ret=%d\n",lengthOfLongestSubstring(s));
+	printf("ret=%d\n",strTimes(str,st));
+	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	//statisticChar(str);
 	//reverseArr(&arr,n);
 	//timeMaker(n);
@@ -50,11 +52,13 @@ int main(void) {
 
 
 	return 0;
-
+	
 }
 
 ////重要的注释
-
+	
+	//strlen()
+	//strstr("maimaitijumai","ti")
 	//s=getchar();
 	// gets(str);
 	//scanf("%s", st);
@@ -75,7 +79,41 @@ int main(void) {
 
 //函数实现
 
+//字符串中找字串
+int strTimes(char* str, char* substr) {
+	int count = 0;
+	char* p = strstr(str, substr);
+	while (p != NULL)
+	{
+		count++;
+		p += strlen(substr);
+		p = strstr(p, substr);
+	}
+	return count;
+}
 int lengthOfLongestSubstring(char* s) {
+	int start = 0, end = 0, maxlen = 0;
+	char map[256] = { 0 };
+
+	map[(int)*(s + start)] = 1;
+	//printf("%c-%d-%c\n", *s,(int)*(s + start), (int)*(s + start));
+	//printf("%d-%c-%d\n", 0=='\0',0,'\0');
+	printf("%d\n", *(s + 11)==0 );
+	while (*(s + end) != 0)
+	{
+		maxlen = maxlen > (end - start + 1) ? maxlen : (end - start + 1);
+		++end;
+		while (map[(int)*(s + end)]!=0 )//将要加入的新元素与map内元素冲突
+		{
+			map[(int)*(s + start)] = 0;
+			++start;
+		}
+		map[(int)*(s + end)] = 1;
+	}
+	//三目运算符是每次右窗口向右移动式更新一次最长强度。
+	//里面的循环相当于左窗口，外循环相当于右窗口。
+
+	return maxlen;
 
 }
 void statisticChar(char str[]) {		//没有写成函数之前是对的
