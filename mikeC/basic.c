@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
@@ -6,16 +6,37 @@
 #include <Windows.h>
 
 
+
 enum Color
 {
 	red, white, blue
 };
+enum DAY
+{
+	MON = 1, TUE, WED, THU, FRI, SAT, SUN
+};
+enum DAY day;
+enum day
+{
+	saturday,
+	sunday,
+	monday,
+	tuesday,
+	wednesday,
+	thursday,
+	friday
+} workday;
+
 struct StructPerson
 {
 	int age;
-	char c;
-};
+	char name[20];
+	char str[10];
+	char* nam;
+}person;
+	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
+char* spilitStr(char* str, char* delim);
 int strTimes(char *str,char *substr);
 int lengthOfLongestSubstring(char* s);
 void statisticChar(char str[]);
@@ -28,22 +49,26 @@ int main(void) {
 	int n, m;
 	char s[] = "hello world";
 	int arr[] = { 1,2,3,4,5,6 };
-	char str[] = "helloallobllocllo"; 
-	char st[] = "llo";
+	char str[] = "he.llo.a.llo.b.llo.c.llo"; 
+	char *st = "llo";
+	int len;
+	char str1[] = "ABCDEF49629423";
+	char str2[] = "013";
+	char *str3 = "013";
 
 	n = 20;
-	m = 30;
+	m = 30;	
 
 
-
+	//printf("ret=%s\n",s);
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 
 	n = sizeof(arr) / sizeof(arr[0]);
-	//ÒÔÏÂÎªº¯Êıµ÷ÓÃ
+	//ä»¥ä¸‹ä¸ºå‡½æ•°è°ƒç”¨
 
-	
-	printf("ret=%d\n",strTimes(str,st));
+	//printf("result=%s\n", spilitStr(str, "."));
+	//printf("ret=%d\n",strTimes(str,st));
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	//statisticChar(str);
 	//reverseArr(&arr,n);
@@ -51,23 +76,32 @@ int main(void) {
 	//guessNum(n);
 
 
+	//printf("Error: %s\n", strerror(errno));
 	return 0;
 	
 }
 
-////ÖØÒªµÄ×¢ÊÍ
+////é‡è¦çš„æ³¨é‡Š
 	
+
+	//printf("ret=%s\n",(strstr(str, "a")));
+	//printf("ret=%s\n",strrchr(str, 2));
+	//printf("ret=%s\n",strtok(str,st));
+	//
+	//printf("ç¬¬ä¸€ä¸ªåŒ¹é…çš„å­—ç¬¦æ˜¯åœ¨ç¬¬ %dä¸ªä½ç½®\n",strcspn(str1, str2)+ 1);
 	//strlen()
+	//char* strchr(str, 'a')//è¿”å›aç¬¬ä¸€æ¬¡å‡ºç°åçš„å­—ç¬¦ä¸²
 	//strstr("maimaitijumai","ti")
+	// 
 	//s=getchar();
 	// gets(str);
 	//scanf("%s", st);
 	//printf("%c\n", s);
 
 
-	//sizeof²»ÊÇº¯Êı£¬ËùÒÔ²»ĞèÒª°üº¬ÈÎºÎÍ·ÎÄ¼ş£¬ËüµÄ¹¦ÄÜÊÇ¼ÆËãÒ»¸öÊı¾İÀàĞÍµÄ´óĞ¡£¬µ¥Î»Îª×Ö½Ú,
-	//sizeofµÄ·µ»ØÖµÎªsize_t.
-	//size_tÀàĞÍÔÚ32Î»²Ù×÷ÏµÍ³ÏÂÊÇunsigned int£¬ÊÇÒ»¸öÎŞ·ûºÅµÄÕûÊı¡£
+	//sizeofä¸æ˜¯å‡½æ•°ï¼Œæ‰€ä»¥ä¸éœ€è¦åŒ…å«ä»»ä½•å¤´æ–‡ä»¶ï¼Œå®ƒçš„åŠŸèƒ½æ˜¯è®¡ç®—ä¸€ä¸ªæ•°æ®ç±»å‹çš„å¤§å°ï¼Œå•ä½ä¸ºå­—èŠ‚,
+	//sizeofçš„è¿”å›å€¼ä¸ºsize_t.
+	//size_tç±»å‹åœ¨32ä½æ“ä½œç³»ç»Ÿä¸‹æ˜¯unsigned intï¼Œæ˜¯ä¸€ä¸ªæ— ç¬¦å·çš„æ•´æ•°ã€‚
 
 	//size_t t = 4;
 	//printf("sizeof=%d\n", sizeof(int));
@@ -77,9 +111,24 @@ int main(void) {
 	Sleep(1000);*/
 	//system("calc");
 
-//º¯ÊıÊµÏÖ
+//å‡½æ•°å®ç°
 
-//×Ö·û´®ÖĞÕÒ×Ö´®
+char* spilitStr(char* str,char* s) {
+	char ret[100]="";
+	char* temp = strtok(str, s);
+
+	while (temp != NULL)
+	{
+		//printf("%s\n", temp);
+		strcat(ret, temp);
+		temp = strtok(NULL, s);
+		
+	}
+	//printf("%s\n", ret);
+	return ret;
+}
+
+//å­—ç¬¦ä¸²ä¸­æ‰¾å­—ä¸²
 int strTimes(char* str, char* substr) {
 	int count = 0;
 	char* p = strstr(str, substr);
@@ -103,20 +152,20 @@ int lengthOfLongestSubstring(char* s) {
 	{
 		maxlen = maxlen > (end - start + 1) ? maxlen : (end - start + 1);
 		++end;
-		while (map[(int)*(s + end)]!=0 )//½«Òª¼ÓÈëµÄĞÂÔªËØÓëmapÄÚÔªËØ³åÍ»
+		while (map[(int)*(s + end)]!=0 )//å°†è¦åŠ å…¥çš„æ–°å…ƒç´ ä¸mapå†…å…ƒç´ å†²çª
 		{
 			map[(int)*(s + start)] = 0;
 			++start;
 		}
 		map[(int)*(s + end)] = 1;
 	}
-	//ÈıÄ¿ÔËËã·ûÊÇÃ¿´ÎÓÒ´°¿ÚÏòÓÒÒÆ¶¯Ê½¸üĞÂÒ»´Î×î³¤Ç¿¶È¡£
-	//ÀïÃæµÄÑ­»·Ïàµ±ÓÚ×ó´°¿Ú£¬ÍâÑ­»·Ïàµ±ÓÚÓÒ´°¿Ú¡£
+	//ä¸‰ç›®è¿ç®—ç¬¦æ˜¯æ¯æ¬¡å³çª—å£å‘å³ç§»åŠ¨å¼æ›´æ–°ä¸€æ¬¡æœ€é•¿å¼ºåº¦ã€‚
+	//é‡Œé¢çš„å¾ªç¯ç›¸å½“äºå·¦çª—å£ï¼Œå¤–å¾ªç¯ç›¸å½“äºå³çª—å£ã€‚
 
 	return maxlen;
 
 }
-void statisticChar(char str[]) {		//Ã»ÓĞĞ´³Éº¯ÊıÖ®Ç°ÊÇ¶ÔµÄ
+void statisticChar(char str[]) {		//æ²¡æœ‰å†™æˆå‡½æ•°ä¹‹å‰æ˜¯å¯¹çš„
 	int count[26] = { 0 };
 	printf("%s", str);
 	for (int i = 0; i < sizeof(str) / sizeof(str[0]); i++)
@@ -137,7 +186,7 @@ void reverseArr(int arr[],int n) {
 	int  m;
 	
 	
-	//n = (sizeof(arr) / sizeof(arr[0]));		//»ñÈ¡Êı×éµÄ³¤¶È//ÕâÀïsizeofÈ¡µ½µÄ´óĞ¡²»ÊÇÊı×éµÄ´óĞ¡¶øÊÇÖ¸ÕëµÄ´óĞ¡32Î»Îª4£¬64Î»Îª8.
+	//n = (sizeof(arr) / sizeof(arr[0]));		//è·å–æ•°ç»„çš„é•¿åº¦//è¿™é‡Œsizeofå–åˆ°çš„å¤§å°ä¸æ˜¯æ•°ç»„çš„å¤§å°è€Œæ˜¯æŒ‡é’ˆçš„å¤§å°32ä½ä¸º4ï¼Œ64ä½ä¸º8.
 	for (int i = 0; i < n; i++)
 	{
 		printf("arr[%d]=%d\n", i, arr[i]);
@@ -175,25 +224,25 @@ void timeMaker(int n) {
 
 void guessNum(int n) {
 	int m;
-	srand(time(NULL) % 100);		//¸øËæ»úÊıÌí¼ÓËæ»úÊı,¸øÖÖ×Ó
+	srand(time(NULL) % 100);		//ç»™éšæœºæ•°æ·»åŠ éšæœºæ•°,ç»™ç§å­
 
 	n = rand() % 100;
 	while (1)
 	{
-		printf("ÊäÈëÄã²ÂµÄÊı×Ö=");
+		printf("è¾“å…¥ä½ çŒœçš„æ•°å­—=");
 		scanf("%d", &m);
 		if (n == m)
 		{
-			printf("ni³É¹¦ÁË\n");
+			printf("niæˆåŠŸäº†\n");
 			break;
 		}
 		else if (m > n)
 		{
-			printf("ÄãÊäÈëµÄ´óÁË\n");
+			printf("ä½ è¾“å…¥çš„å¤§äº†\n");
 		}
 		else if (m < n)
 		{
-			printf("ÄãÊäÈëµÄĞ¡ÁË\n");
+			printf("ä½ è¾“å…¥çš„å°äº†\n");
 		}
 
 	}
