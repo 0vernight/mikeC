@@ -7,6 +7,7 @@
 
 
 
+
 enum Color
 {
 	red, white, blue
@@ -36,6 +37,9 @@ struct StructPerson
 }person;
 	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
+void reverseSentence();
+int fibonaci(int i);
+double factorial(unsigned int i);
 char* spilitStr(char* str, char* delim);
 int strTimes(char *str,char *substr);
 int lengthOfLongestSubstring(char* s);
@@ -57,7 +61,21 @@ int main(void) {
 	char *str3 = "013";
 
 	n = 20;
-	m = 30;	
+	m = 30;
+	
+	
+	
+	//FILE* fp = NULL;
+	//fp= fopen("D:\23236\mike.txt", "w");
+	////fopen_s(fp, "D:\23236\mike.txt", "w");
+	//if (fp==NULL)
+	//{
+	//	perror("file open errors");
+	//	return -1;
+	//}
+	//fprintf(fp, "%s", str1);
+	//fclose(fp);
+	
 
 
 	//printf("ret=%s\n",s);
@@ -65,8 +83,13 @@ int main(void) {
 	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 
 	n = sizeof(arr) / sizeof(arr[0]);
-	//以下为函数调用
 
+
+	//以下为函数调用
+	
+	//reverseSentence();
+	printf("ret=%d\n",fibonaci(9));
+	printf("ret=%f\n",factorial(5));
 	//printf("result=%s\n", spilitStr(str, "."));
 	//printf("ret=%d\n",strTimes(str,st));
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
@@ -113,6 +136,48 @@ int main(void) {
 
 //函数实现
 
+//字符串的反转
+void reverseSentence()
+{
+	char c;
+	scanf("%c", &c);
+
+	if (c != '\n')
+	{
+		reverseSentence();
+		printf("%c", c);
+	}
+}
+//斐波那契数列
+int fibonaci(int i)
+{
+	if (i == 0)
+	{
+		return 0;
+	}
+	if (i == 1)
+	{
+		return 1;
+	}
+	//printf("%d\n", i);
+	int f=fibonaci(i - 1) + fibonaci(i - 2);
+	//printf("%d\n", f);		//回溯？？
+	return f;
+}
+//阶乘
+double factorial(unsigned int i)
+{
+	if (i < 1)
+	{
+		return 1;
+	}
+	printf("bef=%d\n", i);
+	double f=i * factorial(i - 1);
+	printf("aft=%d\n", i);
+	return f;
+}
+
+//s字符串来分割str字符串
 char* spilitStr(char* str,char* s) {
 	char ret[100]="";
 	char* temp = strtok(str, s);
