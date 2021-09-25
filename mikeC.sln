@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mikeC", "mikeC\mikeC.vcxproj", "{D4495D0B-861A-4567-835D-32DFA322BFF7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GluttonousSnake", "GluttonousSnake\GluttonousSnake.vcxproj", "{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{D4495D0B-861A-4567-835D-32DFA322BFF7}.Release|x64.Build.0 = Release|x64
 		{D4495D0B-861A-4567-835D-32DFA322BFF7}.Release|x86.ActiveCfg = Release|Win32
 		{D4495D0B-861A-4567-835D-32DFA322BFF7}.Release|x86.Build.0 = Release|Win32
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Debug|x64.ActiveCfg = Debug|x64
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Debug|x64.Build.0 = Debug|x64
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Debug|x86.ActiveCfg = Debug|Win32
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Debug|x86.Build.0 = Debug|Win32
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Release|x64.ActiveCfg = Release|x64
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Release|x64.Build.0 = Release|x64
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Release|x86.ActiveCfg = Release|Win32
+		{47BB7390-BE6A-405E-A7DB-187AC76A6EEF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

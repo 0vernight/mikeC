@@ -7,7 +7,6 @@
 
 
 
-
 enum Color
 {
 	red, white, blue
@@ -63,33 +62,20 @@ int main(void) {
 	n = 20;
 	m = 30;
 	
-	
-	
-	//FILE* fp = NULL;
-	//fp= fopen("D:\23236\mike.txt", "w");
-	////fopen_s(fp, "D:\23236\mike.txt", "w");
-	//if (fp==NULL)
-	//{
-	//	perror("file open errors");
-	//	return -1;
-	//}
-	//fprintf(fp, "%s", str1);
-	//fclose(fp);
-	
 
-
+	//c项目实例50
 	//printf("ret=%s\n",s);
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 
 	n = sizeof(arr) / sizeof(arr[0]);
 
-
+	
 	//以下为函数调用
 	
 	//reverseSentence();
-	printf("ret=%d\n",fibonaci(9));
-	printf("ret=%f\n",factorial(5));
+	//printf("ret=%d\n",fibonaci(9));
+	//printf("ret=%f\n",factorial(5));
 	//printf("result=%s\n", spilitStr(str, "."));
 	//printf("ret=%d\n",strTimes(str,st));
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
