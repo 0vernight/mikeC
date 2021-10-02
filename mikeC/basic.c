@@ -62,7 +62,12 @@ int main(void) {
 	n = 20;
 	m = 30;
 	
-
+	//char* p = calloc(10, sizeof(char));
+	char* p = malloc( sizeof(char* )*10);
+	for (size_t i = 0; i < 10; i++)
+	{
+		printf("|%c|\n", p[i]);
+	}
 	//c项目实例50
 	//printf("ret=%s\n",s);
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
@@ -92,7 +97,8 @@ int main(void) {
 
 ////重要的注释
 	
-
+	
+	//wan neng zhi zhen 
 	//printf("ret=%s\n",(strstr(str, "a")));
 	//printf("ret=%s\n",strrchr(str, 2));
 	//printf("ret=%s\n",strtok(str,st));
