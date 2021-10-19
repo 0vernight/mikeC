@@ -28,12 +28,11 @@ enum day
 	friday
 } workday;
 
-struct StructPerson
+typedef struct StructPerson
 {
 	int age;
 	char name[20];
 	char str[10];
-	char* nam;
 }person;
 	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
@@ -50,7 +49,7 @@ void reverseArr(int arr[],int n);
 void timeMaker(int n);
 void guessNum(int n);
 
-int main(void) {
+int main1(void) {
 
 	/*
 	int n, m,l;
@@ -71,7 +70,7 @@ int main(void) {
 	//c项目实例66   
 	
 
-	
+	person p[2];
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	//printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 	
@@ -79,7 +78,9 @@ int main(void) {
 
 	
 	//以下为函数调用
-	counting();
+	
+
+	//counting();
 	//reverseSentence();
 	//printf("ret=%d\n",fibonaci(9));
 	//printf("ret=%f\n",factorial(5));
