@@ -7,6 +7,7 @@
 
 
 
+
 enum Color
 {
 	red, white, blue
@@ -36,6 +37,8 @@ struct StructPerson
 }person;
 	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
+void counting();
+void swap(int* a, int* b);
 void reverseSentence();
 int fibonaci(int i);
 double factorial(unsigned int i);
@@ -49,7 +52,8 @@ void guessNum(int n);
 
 int main(void) {
 
-	int n, m;
+	/*
+	int n, m,l;
 	char s[] = "hello world";
 	int arr[] = { 1,2,3,4,5,6 };
 	char str[] = "he.llo.a.llo.b.llo.c.llo"; 
@@ -61,23 +65,21 @@ int main(void) {
 
 	n = 20;
 	m = 30;
+	l = 25;
+	*/
+
+	//c项目实例66
 	
-	//char* p = calloc(10, sizeof(char));
-	char* p = malloc( sizeof(char* )*10);
-	for (size_t i = 0; i < 10; i++)
-	{
-		printf("|%c|\n", p[i]);
-	}
-	//c项目实例50
-	//printf("ret=%s\n",s);
+
+	
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
 	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
-
+	
 	n = sizeof(arr) / sizeof(arr[0]);
 
 	
 	//以下为函数调用
-	
+	counting();
 	//reverseSentence();
 	//printf("ret=%d\n",fibonaci(9));
 	//printf("ret=%f\n",factorial(5));
@@ -128,6 +130,53 @@ int main(void) {
 
 //函数实现
 
+
+
+
+//交换
+void swap(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	
+}
+void counting() {
+	//c69列题
+	int num[50], n, * p, j, loop, i, m, k;
+	printf("输入人数\n");
+	scanf("%d", &n);
+	p = num;
+	j = 0;//用于计数,即让指针后移
+	m = 0;//m记录退出圈子的人数
+	k = 0;//k报数1,2,3
+	for (size_t i = 0; i < n; i++)
+	{
+		*(p + i) = i + 1;
+	}
+	while (m < n - 1)
+	{
+		if (k % 3 == 0)
+		{
+			k = 0;
+			*(p + j) = 0;
+			m++;
+		}
+		k++;
+		j++;
+		if (j == n)
+		{
+			j = 0;
+		}
+
+	}
+	for (size_t i = 0; i < n; i++)
+	{
+		if (*(p + i) != 0)
+		{
+			printf("剩下的只有%d号\n", i + 1);
+		}
+	}
+}
 //字符串的反转
 void reverseSentence()
 {
