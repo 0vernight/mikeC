@@ -68,14 +68,14 @@ int main(void) {
 	l = 25;
 	*/
 
-	//c项目实例66
+	//c项目实例66   
 	
 
 	
 	//printf("ret=%d\n",lengthOfLongestSubstring(s));
-	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
+	//printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 	
-	n = sizeof(arr) / sizeof(arr[0]);
+	//n = sizeof(arr) / sizeof(arr[0]);
 
 	
 	//以下为函数调用
@@ -137,8 +137,7 @@ int main(void) {
 void swap(int* a, int* b) {
 	int temp = *a;
 	*a = *b;
-	*b = temp;
-	
+	*b = temp;	
 }
 void counting() {
 	//c69列题
@@ -155,13 +154,17 @@ void counting() {
 	}
 	while (m < n - 1)
 	{
-		if (k % 3 == 0)
+		if (*(p+j)!=0)
+		{
+			k++;
+		}
+		if (k==3)
 		{
 			k = 0;
 			*(p + j) = 0;
 			m++;
 		}
-		k++;
+		
 		j++;
 		if (j == n)
 		{
