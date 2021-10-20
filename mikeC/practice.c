@@ -4,6 +4,7 @@
 typedef struct LNode {
     int          data;
     struct LNode* next;
+    struct LNode* pre;
 }LNode, * LinkList;
 
 
@@ -19,18 +20,20 @@ person InitPerson(int n);
 void printPerson(person h);
 LinkList CreateList(int n);
 void printLinklist(LinkList h);
+void invertedLinklist(LinkList t);
 int main()
 {
     LinkList Head = NULL;
     person head = NULL;
     int n;
-    /*printf("size=%d\n", sizeof(LNode));
+    printf("size=%d\n", sizeof(LNode));
     scanf("%d", &n);
     Head = CreateList(n);
     
     printf("刚刚建立的各个链表元素的值为：\n");
-    printLinklist(Head);
-    printf("\n\n");*/
+    //printLinklist(Head);
+    invertedLinklist(Head);
+    printf("\n\n");
 
     
     printf("输入人数\n");
@@ -75,6 +78,7 @@ LinkList CreateList(int n)
     L = (LNode*)malloc(sizeof(LNode));
     if (!L)return 0;
     L->next = NULL;
+    L->pre = NULL;
     q = L;
     for (i = 1; i <= n; i++)
     {
@@ -82,10 +86,21 @@ LinkList CreateList(int n)
         printf("请输入第%d个元素的值:", i);
         scanf("%d", &(p->data));
         p->next = NULL;
+        p->pre = q;
         q->next = p;
         q = p;
     }
-    return L;
+    return q;
+}
+void invertedLinklist(LinkList t)
+{
+    LinkList p = t;
+    int i = 0;
+    while (p->pre != NULL) {//因为这里的指针有一个头指针值为空值
+        printf("%d ", p->data);
+        p = p->pre; i++;
+    }
+    printf("i=%d", i);
 }
 void printLinklist(LinkList h)
 {
