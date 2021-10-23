@@ -21,5 +21,14 @@
     <ClCompile Include="practice.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="linkedlist.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="seventyeight.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eighty.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

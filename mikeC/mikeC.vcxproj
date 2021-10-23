@@ -142,7 +142,10 @@
     <ClCompile Include="basic.c">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="eighty.c" />
+    <ClCompile Include="linkedlist.c" />
     <ClCompile Include="practice.c" />
+    <ClCompile Include="seventyeight.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

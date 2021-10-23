@@ -36,6 +36,7 @@ typedef struct StructPerson
 }person;
 	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
+void reverseInt();
 void counting();
 void swap(int* a, int* b);
 void reverseSentence();
@@ -51,9 +52,9 @@ void guessNum(int n);
 
 int main1(void) {
 
-	/*
+	
 	int n, m,l;
-	char s[] = "hello world";
+	char* s[] = { "hello","world","!","welcome" };
 	int arr[] = { 1,2,3,4,5,6 };
 	char str[] = "he.llo.a.llo.b.llo.c.llo"; 
 	char *st = "llo";
@@ -65,21 +66,19 @@ int main1(void) {
 	n = 20;
 	m = 30;
 	l = 25;
-	*/
-
-	//c项目实例66   
 	
 
-	person p[2];
-	//printf("ret=%d\n",lengthOfLongestSubstring(s));
-	//printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
+	//c项目实例75
 	
-	//n = sizeof(arr) / sizeof(arr[0]);
+	
 
+	
+	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
+	
 	
 	//以下为函数调用
 	
-
+	//reverseInt()
 	//counting();
 	//reverseSentence();
 	//printf("ret=%d\n",fibonaci(9));
@@ -101,7 +100,8 @@ int main1(void) {
 ////重要的注释
 	
 	
-	//wan neng zhi zhen 
+	//
+	//万能指针
 	//printf("ret=%s\n",(strstr(str, "a")));
 	//printf("ret=%s\n",strrchr(str, 2));
 	//printf("ret=%s\n",strtok(str,st));
@@ -132,8 +132,28 @@ int main1(void) {
 //函数实现
 
 
-
-
+//指向指针的指针
+void pointersPointer() {
+	char* s[] = { "hello","world","!","welcome" };
+	char** p;
+	for (size_t i = 0; i < strlen(s); i++)
+	{
+		p = &s[i];
+		printf("%s ", *p);
+	}
+}
+//反向输出整数
+void reverseInt() {
+	int n;
+	scanf("%d", &n);
+	int k = 0, t = n;
+	while (t)
+	{
+		k = k * 10 + (t % 10);
+		t = t / 10;
+	}
+	printf("%d", k);
+}
 //交换
 void swap(int* a, int* b) {
 	int temp = *a;
@@ -257,7 +277,7 @@ int lengthOfLongestSubstring(char* s) {
 	map[(int)*(s + start)] = 1;
 	//printf("%c-%d-%c\n", *s,(int)*(s + start), (int)*(s + start));
 	//printf("%d-%c-%d\n", 0=='\0',0,'\0');
-	printf("%d\n", *(s + 11)==0 );
+	//printf("%d\n", *(s + 11)==0 );
 	while (*(s + end) != 0)
 	{
 		maxlen = maxlen > (end - start + 1) ? maxlen : (end - start + 1);

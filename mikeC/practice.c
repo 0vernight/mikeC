@@ -19,9 +19,10 @@ typedef struct Person {
 person InitPerson(int n);
 void printPerson(person h);
 LinkList CreateList(int n);
+LinkList CreateTList(int n);
 void printLinklist(LinkList h);
 void invertedLinklist(LinkList t);
-int main()
+int main2()
 {
     LinkList Head = NULL;
     person head = NULL;
@@ -29,10 +30,11 @@ int main()
     printf("size=%d\n", sizeof(LNode));
     scanf("%d", &n);
     Head = CreateList(n);
+    //Head = CreateTList(n);
     
     printf("刚刚建立的各个链表元素的值为：\n");
-    //printLinklist(Head);
-    invertedLinklist(Head);
+    printLinklist(Head);
+    //invertedLinklist(Head);   //双链表反向输出，函数的返回值
     printf("\n\n");
 
     
@@ -71,6 +73,26 @@ void printPerson(person h)
     }
 }
 LinkList CreateList(int n)
+{
+    //链表   三生万物，三个指针搞定一个单链表。
+    LinkList L, p, q;
+    int i;
+    L = (LNode*)malloc(sizeof(LNode));
+    if (!L)return 0;
+    L->next = NULL;
+    q = L;
+    for (i = 1; i <= n; i++)
+    {
+        p = (LinkList)malloc(sizeof(LNode));
+        printf("请输入第%d个元素的值:", i);
+        scanf("%d", &(p->data));
+        p->next = NULL;
+        q->next = p;
+        q = p;
+    }
+    return L;
+}
+LinkList CreateTList(int n)
 {
     //链表   三生万物，三个指针搞定一个单链表。
     LinkList L, p, q;
