@@ -4,7 +4,7 @@
 #include<math.h>
 
 
-void main() {
+void main13() {
     FILE* fa, * fb, * fc;
     int i, j, k;
     char str[100], str1[100];
