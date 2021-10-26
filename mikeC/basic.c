@@ -36,6 +36,7 @@ typedef struct StructPerson
 }person;
 	//struct StructPerson p = { 22,"maimai","mmmmm" };
 
+struct StructPerson printStruct(struct StructPerson*);
 void reverseInt();
 void counting();
 void swap(int* a, int* b);
@@ -68,10 +69,14 @@ int main1(void) {
 	l = 25;
 	
 
-	//c项目实例75
-	
-	
-
+	//c项目实例80
+	struct StructPerson p = {
+		.name = "mai",
+		.age = 24,
+		.str = "hello c"
+	};
+	printStruct(&p);
+	printf("%d\n", p.age);
 	
 	printf("%s:%u:%d:%s\n", (char*)(strstr("maimaitijumai","ti")), sizeof(arr), n, st);
 	
@@ -131,7 +136,11 @@ int main1(void) {
 
 //函数实现
 
-
+//传结构体
+struct StructPerson printStruct(struct StructPerson *s) {
+	printf("%s:age=%d,des:%s\n", s->name, s->age, s->str);
+	s->age = 22;
+}
 //指向指针的指针
 void pointersPointer() {
 	char* s[] = { "hello","world","!","welcome" };

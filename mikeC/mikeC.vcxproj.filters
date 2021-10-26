@@ -30,5 +30,26 @@
     <ClCompile Include="eighty.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="eightyone.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eightytwo.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eightynine.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="timepractice.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ninetyfor.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iotest.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ninetynine.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

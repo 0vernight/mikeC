@@ -143,9 +143,16 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="eighty.c" />
+    <ClCompile Include="eightynine.c" />
+    <ClCompile Include="eightyone.c" />
+    <ClCompile Include="eightytwo.c" />
+    <ClCompile Include="iotest.c" />
     <ClCompile Include="linkedlist.c" />
+    <ClCompile Include="ninetyfor.c" />
+    <ClCompile Include="ninetynine.c" />
     <ClCompile Include="practice.c" />
     <ClCompile Include="seventyeight.c" />
+    <ClCompile Include="timepractice.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
