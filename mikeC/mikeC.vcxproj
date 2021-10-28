@@ -146,7 +146,9 @@
     <ClCompile Include="eightynine.c" />
     <ClCompile Include="eightyone.c" />
     <ClCompile Include="eightytwo.c" />
+    <ClCompile Include="exser.c" />
     <ClCompile Include="iotest.c" />
+    <ClCompile Include="joseph.c" />
     <ClCompile Include="linkedlist.c" />
     <ClCompile Include="ninetyfor.c" />
     <ClCompile Include="ninetynine.c" />
