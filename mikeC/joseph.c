@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 #include<malloc.h>
+#include<time.h>
 
 
 typedef struct sailor
@@ -16,10 +17,11 @@ sman disembark(sman s);
 void main() {
 	int i, j, k, l, m, n;
 	int a[31] = { 0 };
-
+	time_t start, end;
 	m = 0;		//船上总共有三十个人
 	j = 1;		//位数
 	k = 1;		//报数
+	start = time(NULL);
 	while (m<15)
 	{
 		i = 0;
@@ -57,11 +59,66 @@ void main() {
 		}
 		m++;
 	}
+	end = time(NULL);
+	
 
+	// 输出执行时间
+	printf("时间间隔为 %6.3f\n", difftime(end, start));
+
+	int c = 0;
+	i = 1;
+	j = 0;
+	int d[31] = { 0 };
+	int b[31] = { 0 };
+	start = time(NULL);
+	while (i <= 31)
+	{
+		if (i >= 31)
+		{
+			i = 1;
+		}
+		else if (c == 15)
+		{
+			break;
+		}
+		else
+		{
+			if (b[i] != 0)
+			{
+				i++;
+				continue;
+			}
+			else
+			{
+				j++;
+				if (j != 9)
+				{
+					i++;
+					continue;
+				}
+				else
+				{
+					b[i] = 1;
+					d[i] = j;
+					j = 0;
+					printf("第%d号下船了\n", i);
+					i++;
+					c++;
+				}
+			}
+		}
+	}
+	end = time(NULL);
+	
+	// 输出执行时间
+	printf("时间间隔为 %6.3f\n", difftime(end, start));
+
+	start = time(NULL);
 	sman s = NULL;
 	s = initSailor(s);
 	s = disembark(s);
-
+	end = time(NULL);
+	printf("时间间隔为 %6.3f\n", difftime(end, start));
 }
 sman disembark(sman s) {
 	int i, j, k, t, m;
