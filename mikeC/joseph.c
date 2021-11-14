@@ -14,7 +14,7 @@ typedef struct sailor
 
 struct sailor* initSailor(struct sailor *s);
 sman disembark(sman s);
-void main() {
+void main15() {
 	int i, j, k, l, m, n;
 	int a[31] = { 0 };
 	time_t start, end;
